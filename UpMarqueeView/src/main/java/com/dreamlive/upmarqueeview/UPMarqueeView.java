@@ -84,4 +84,14 @@ public class UPMarqueeView extends ViewFlipper {
     public interface OnItemClickListener {
         void onItemClick(int position, View view);
     }
+
+    /**
+     * 设置刷新间隔
+     *
+     * @param duration
+     */
+    public void setInterval(int duration) {
+        interval = duration;
+        setFlipInterval(duration);
+    }
 }
