@@ -3,6 +3,7 @@ package com.dreamlive.upmarqueeview;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ViewFlipper;
@@ -60,6 +61,10 @@ public class UPMarqueeView extends ViewFlipper {
                     }
                 }
             });
+            ViewGroup parent = (ViewGroup) views.get(i).getParent();
+            if (null != parent) {
+                parent.removeView(views.get(i));
+            }
             addView(views.get(i));
         }
         startFlipping();
